@@ -70,6 +70,21 @@ CREATE TABLE Enrollment (
     FOREIGN KEY(Course_ID)
     REFERENCES Course(Course_ID)
 );
+--CREATING ATTENDANCE RELATION--
+CREATE TABLE Attendance (
+    Attendence_ID INTEGER PRIMARY KEY,
+    Student_ID INTEGER NOT NULL,
+    Course_ID INTEGER NOT NULL,
+    Date INTEGER,
+    Status VARCHAR(10),
+    CONSTRAINT FK_Attendance_Student
+    FOREIGN KEY(Student_ID)
+    REFERENCES Student(Student_ID),
+    CONSTRAINT FK_Attendance
+    FOREIGN KEY(Course_ID)
+    REFERENCES Course(Course_ID)
+);
+
 
 --CREATING EXAM RELATION--
 CREATE TABLE Exam (
